@@ -161,24 +161,31 @@ function install_lua_libs () {
 	luarocks install uuidx
 	luarocks install lua-xlsxwriter
 	luarocks install lua-resty-rsa
+	luarocks install xls-read
+	# 需要在https://dev.maxmind.com/geoip/geoip2/geolite2/  下载资源包
+	luarocks install mmdblua
 }
 
-echo openresty_install start
-#创建安装包目录
-init_dir
-#安装系统依赖环境库
-install_base_lib
-#安装lua解释器
-install_lua
-#安装luarocks安装包管理器
-install_lua_rocks
-#库源码包安装
-install_src_lib
-#安装openresty
-install_openresty
-#安装lua库
-install_lua_libs
-#更改系统环境变量
-source_env
+function install_all() {
+	echo openresty_install start
+	#创建安装包目录
+	init_dir
+	#安装系统依赖环境库
+	install_base_lib
+	#安装lua解释器
+	install_lua
+	#安装luarocks安装包管理器
+	install_lua_rocks
+	#库源码包安装
+	install_src_lib
+	#安装openresty
+	install_openresty
+	#安装lua库
+	install_lua_libs
+	#更改系统环境变量
+	source_env
 
-echo openresty_install success
+	echo openresty_install success
+}
+
+install_all
