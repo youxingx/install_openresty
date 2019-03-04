@@ -160,6 +160,7 @@ function install_lua_libs () {
 
 	luarocks install uuidx
 	luarocks install lua-xlsxwriter
+	luarocks install lua-resty-rsa
 }
 
 echo openresty_install start
