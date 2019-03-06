@@ -164,6 +164,8 @@ function install_lua_libs () {
 	luarocks install xls-read
 	# 需要在https://dev.maxmind.com/geoip/geoip2/geolite2/  下载资源包
 	luarocks install mmdblua
+
+	luarocks install lua-gd
 }
 
 function install_all() {
