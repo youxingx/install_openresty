@@ -22,6 +22,7 @@ function install_base_lib () {
 	yum install -y  e2fsprogs-devel  libuuid-deve
 	yum install -y boost-devel
 	yum install -y libuuid-devel
+	yum install -y libpng-devel libjpeg-devel freetype-devel  fontconfig-devel ibXpm-devel 
 }
 
 function install_lua() {
@@ -183,7 +184,7 @@ function install_all() {
 	#安装openresty
 	install_openresty
 	#安装lua库
-	install_lua_libs
+	
 	#更改系统环境变量
 	source_env
 
