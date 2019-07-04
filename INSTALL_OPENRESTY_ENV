@@ -147,6 +147,8 @@ function install_lua_libs () {
 	luarocks install lua-resty-session
 	#luacrypto库,各种加密
 	luarocks install luacrypto
+	luarocks install lua-resty-nettle
+	
 	# lua xml 
 	luarocks install lub
 	luarocks install lut
@@ -164,9 +166,9 @@ function install_lua_libs () {
 	luarocks install lua-resty-rsa
 	luarocks install xls-read
 	# 需要在https://dev.maxmind.com/geoip/geoip2/geolite2/  下载资源包
-	luarocks install mmdblua
+	#luarocks install mmdblua
 
-	luarocks install lua-gd
+	#luarocks install lua-gd
 }
 
 function install_all() {
@@ -187,7 +189,10 @@ function install_all() {
 	
 	#更改系统环境变量
 	source_env
-
+	
+	#安装lua库
+	install_lua_libs
+	
 	echo openresty_install success
 }
 
