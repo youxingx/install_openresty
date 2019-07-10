@@ -165,6 +165,7 @@ function install_lua_libs () {
 	luarocks install lua-xlsxwriter
 	luarocks install lua-resty-rsa
 	luarocks install xls-read
+	luarocks install lua-path
 	# 需要在https://dev.maxmind.com/geoip/geoip2/geolite2/  下载资源包
 	#luarocks install mmdblua
 
