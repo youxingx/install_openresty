@@ -60,15 +60,14 @@ function install_lua_rocks() {
 
 function install_drizzer() {
 	#安装 drizzer
-	if [ ! -f "drizzle7-2011.07.21.tar.gz" ];then
-		wget http://agentzh.org/misc/nginx/drizzle7-2011.07.21.tar.gz
-	fi
-	
-	if [ -d "./drizzle7-2011.07.21" ];then
-		rm -rf ./drizzle7-2011.07.21
+	if [ ! -d "./openresty_drizzle" ];then
+		git clone https://github.com/youxingx/openresty_drizzle.git
 	fi
 
-	tar -zxvf drizzle7-2011.07.21.tar.gz
+	cd openresty_drizzle/
+	if [ -d "./drizzle7-2011.07.21" ];then
+		tar -zxvf drizzle7-2011.07.21.tar.gz
+	fi
 	cd drizzle7-2011.07.21
 	./configure --without-server 
 	make libdrizzle-1.0
@@ -86,7 +85,7 @@ function install_drizzer() {
 	ln -s /usr/local/lib/libdrizzle.so.1 /usr/lib/libdrizzle.so.1
 	ln -s /usr/local/lib/libdrizzle.so.1 /usr/lib64/libdrizzle.so.1
 	#cp /usr/lib/libdrizzle.so.1  /usr/lib64
-	cd ..
+	cd ../../
 }
 
 function install_openresty() {
