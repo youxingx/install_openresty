@@ -65,7 +65,7 @@ function install_drizzer() {
 	fi
 
 	cd openresty_drizzle/
-	if [ -d "./drizzle7-2011.07.21" ];then
+	if [ ! -d "./drizzle7-2011.07.21" ];then
 		tar -zxvf drizzle7-2011.07.21.tar.gz
 	fi
 	cd drizzle7-2011.07.21
